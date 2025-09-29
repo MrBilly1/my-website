@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voldi Bill Paulo Lusikila | Portfolio</title>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(180deg, #0f172a, #1e293b, #334155);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      background-color: #0066cc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .camera-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #0066cc;
+      border-radius: 50%;
+      border: 2px solid white;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 16px;
+    }
+
+    .location {
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== SOCIAL LINKS ===== */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #1e293b;
+      padding: 12px 16px;
+      border-radius: 25px;
+      border: 1px solid #334155;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .social-btn:hover {
+      background-color: #0066cc33;
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+
+    .about p {
+      color: #94a3b8;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    /* ===== GRID / CARD ===== */
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); }
+
+    .card h3 {
+      color: white;
+      font-size: 1.2rem;
+      margin: 12px 0 8px;
+    }
+
+    .card p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #0066cc20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 12px;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 60px 20px;
+    }
+
+    .cta-box {
+      background: linear-gradient(90deg, #0066cc, #0052a3);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-box h3 { font-size: 1.6rem; margin-bottom: 12px; }
+    .cta-box p { color: #e2e8f0; margin-bottom: 24px; }
+    .cta-btn {
+      background: white;
+      color: #0066cc;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cta-btn:hover { background: #f8f9fa; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #334155;
+      text-align: center;
+      color: #64748b;
+      font-size: 12px;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+<section class="hero">
+  <div class="profile-image">
+    <img src="./assets/images/profile_photo.jpg" alt="Voldi Bill Paulo Lusikila" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255, 255, 255, 0.2);" />
+  </div>
+  <h1>Voldi Bill Paulo Lusikila</h1>
+  <p>Cybersecurity Analyst • Software Engineer • IT Consultant</p>
+  <div class="location">
+    <i data-lucide="map-pin" style="width:16px; height:16px;"></i>
+    <span>Available Worldwide</span>
+  </div>
+
+  <div class="social-links">
+    <a class="social-btn" href="https://www.linkedin.com/in/voldi-bill-paulo-lusikila-703774199" target="_blank">
+      <i data-lucide="linkedin"></i> LinkedIn
+    </a>
+    <a class="social-btn" href="https://github.com/MrBilly1" target="_blank">
+      <i data-lucide="github"></i> GitHub
+    </a>
+  </div>
+</section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About</h2>
+    <p>Experienced cybersecurity professional with a strong background in software engineering and IT consulting. Specialized in protecting organizations from evolving cyber threats while building robust, scalable solutions.</p>
+    <p>With expertise spanning threat analysis, secure coding practices, and strategic IT planning, I help organizations build resilient infrastructures that drive growth while maintaining the highest security standards.</p>
+  </section>
+
+  <!-- CORE EXPERTISE -->
+  <section>
+    <h2>Core Expertise</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="shield"></i></div>
+        <h3>Cybersecurity</h3>
+        <p>Threat analysis, vulnerability assessment, security auditing</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="code"></i></div>
+        <h3>Software Engineering</h3>
+        <p>Full-stack development, system architecture, code optimization</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="settings"></i></div>
+        <h3>IT Consulting</h3>
+        <p>Digital transformation, infrastructure planning, tech strategy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="shield"></i></div>
+        <h3>Security Auditing</h3>
+        <p>Comprehensive security assessments and penetration testing</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="award"></i></div>
+        <h3>Compliance</h3>
+        <p>GDPR, ISO 27001, and industry-specific compliance consulting</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="users"></i></div>
+        <h3>Team Training</h3>
+        <p>Cybersecurity awareness and technical skills development</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="zap"></i></div>
+        <h3>Incident Response</h3>
+        <p>24/7 incident response and forensic analysis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact Information</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="mail"></i></div>
+        <h3>Email</h3>
+        <p>aagustpro@gmail.com</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="phone"></i></div>
+        <h3>Phone</h3>
+        <p>0213005672</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="message-circle"></i></div>
+        <h3>WhatsApp</h3>
+        <p>+27676265189</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-box">
+      <h3>Ready to Secure Your Digital Future?</h3>
+      <p>Let’s discuss how I can help protect and optimize your technology infrastructure.</p>
+      <a href="mailto:aagustpro@gmail.com">
+        <button class="cta-btn">Get In Touch</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>© 2024 Voldi Bill Paulo Lusikila. All rights reserved.</footer>
+
+  <!-- INIT ICONS -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
