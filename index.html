@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voldi Bill Paulo Lusikila | Portfolio</title>
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
@@ -19,7 +19,7 @@
       line-height: 1.6;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO SECTION ===== */
     .hero {
       background: linear-gradient(180deg, #0f172a, #1e293b, #334155);
       min-height: 100vh;
@@ -31,24 +31,33 @@
       padding: 40px 20px;
     }
 
-    .profile-image {
-      width: 120px;
-      height: 120px;
+    /* ===== FLOATING PROFILE IMAGE ===== */
+    .profile-image img {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid rgba(255, 255, 255, 0.2);
-      margin-bottom: 16px;
+      object-fit: cover;
+      border: none;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
     }
 
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @keyframes float {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-15px) scale(1.03);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+      }
     }
 
     .hero h1 {
       color: white;
       font-size: 2rem;
+      margin-top: 20px;
       margin-bottom: 10px;
     }
 
@@ -95,7 +104,7 @@
       background-color: #0066cc33;
     }
 
-    /* ===== SECTIONS ===== */
+    /* ===== SECTION ===== */
     section {
       padding: 60px 20px;
       max-width: 900px;
@@ -115,7 +124,7 @@
       line-height: 1.7;
     }
 
-    /* ===== GRID ===== */
+    /* ===== GRID / CARD ===== */
     .grid {
       display: grid;
       gap: 20px;
@@ -131,9 +140,7 @@
       transition: transform 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+    .card:hover { transform: translateY(-4px); }
 
     .card h3 {
       color: white;
@@ -170,16 +177,8 @@
       color: white;
     }
 
-    .cta-box h3 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    .cta-box p {
-      color: #e2e8f0;
-      margin-bottom: 24px;
-    }
-
+    .cta-box h3 { font-size: 1.6rem; margin-bottom: 12px; }
+    .cta-box p { color: #e2e8f0; margin-bottom: 24px; }
     .cta-btn {
       background: white;
       color: #0066cc;
@@ -190,10 +189,7 @@
       font-weight: 600;
       cursor: pointer;
     }
-
-    .cta-btn:hover {
-      background: #f8f9fa;
-    }
+    .cta-btn:hover { background: #f8f9fa; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -202,24 +198,23 @@
       color: #64748b;
       font-size: 12px;
       padding: 20px;
+    }
+
+    .footer-links {
+      margin-top: 10px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 16px;
     }
 
-    footer .social-footer {
-      display: flex;
-      gap: 12px;
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    footer .social-footer a {
-      color: #64748b;
-      transition: color 0.3s;
-    }
-
-    footer .social-footer a:hover {
-      color: #0066cc;
+    .footer-links a:hover {
+      color: #1da1f2;
     }
 
     @media (max-width: 600px) {
@@ -229,26 +224,26 @@
 </head>
 <body>
   <!-- HERO -->
-  <section class="hero">
-    <div class="profile-image">
-      <img src="./assets/images/billy_prof.png" alt="Voldi Bill Paulo Lusikila" />
-    </div>
-    <h1>Voldi Bill Paulo Lusikila</h1>
-    <p>Cybersecurity Analyst • Software Engineer • IT Consultant</p>
-    <div class="location">
-      <i data-lucide="map-pin" style="width:16px; height:16px;"></i>
-      <span>Available Worldwide</span>
-    </div>
+<section class="hero">
+  <div class="profile-image">
+    <img src="./assets/images/billy_prof.png" alt="Voldi Bill Paulo Lusikila" />
+  </div>
+  <h1>Voldi Bill Paulo Lusikila</h1>
+  <p>Cybersecurity Analyst • Software Engineer • IT Consultant</p>
+  <div class="location">
+    <i data-lucide="map-pin" style="width:16px; height:16px;"></i>
+    <span>Available Worldwide</span>
+  </div>
 
-    <div class="social-links">
-      <a class="social-btn" href="https://www.linkedin.com/in/voldi-bill-paulo-lusikila-703774199" target="_blank">
-        <i data-lucide="linkedin"></i> LinkedIn
-      </a>
-      <a class="social-btn" href="https://github.com/MrBilly1" target="_blank">
-        <i data-lucide="github"></i> GitHub
-      </a>
-    </div>
-  </section>
+  <div class="social-links">
+    <a class="social-btn" href="https://www.linkedin.com/in/voldi-bill-paulo-lusikila-703774199" target="_blank">
+      <i data-lucide="linkedin"></i> LinkedIn
+    </a>
+    <a class="social-btn" href="https://github.com/MrBilly1" target="_blank">
+      <i data-lucide="github"></i> GitHub
+    </a>
+  </div>
+</section>
 
   <!-- ABOUT -->
   <section class="about">
@@ -264,17 +259,17 @@
       <div class="card">
         <div class="icon-circle"><i data-lucide="shield"></i></div>
         <h3>Cybersecurity</h3>
-        <p>Threat analysis, vulnerability assessment, and security auditing</p>
+        <p>Threat analysis, vulnerability assessment, security auditing</p>
       </div>
       <div class="card">
         <div class="icon-circle"><i data-lucide="code"></i></div>
         <h3>Software Engineering</h3>
-        <p>Full-stack development, architecture design, and optimization</p>
+        <p>Full-stack development, system architecture, code optimization</p>
       </div>
       <div class="card">
         <div class="icon-circle"><i data-lucide="settings"></i></div>
         <h3>IT Consulting</h3>
-        <p>Digital transformation, infrastructure planning, and strategy</p>
+        <p>Digital transformation, infrastructure planning, tech strategy</p>
       </div>
     </div>
   </section>
@@ -296,7 +291,7 @@
       <div class="card">
         <div class="icon-circle"><i data-lucide="users"></i></div>
         <h3>Team Training</h3>
-        <p>Cybersecurity awareness and technical upskilling</p>
+        <p>Cybersecurity awareness and technical skills development</p>
       </div>
       <div class="card">
         <div class="icon-circle"><i data-lucide="zap"></i></div>
@@ -341,12 +336,10 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2024 Voldi Bill Paulo Lusikila. All rights reserved.
-    <div class="social-footer">
-      <a href="https://www.linkedin.com/in/voldi-bill-paulo-lusikila-703774199" target="_blank"><i data-lucide="linkedin"></i></a>
-      <a href="https://github.com/MrBilly1" target="_blank"><i data-lucide="github"></i></a>
-      <a href="https://www.instagram.com/" target="_blank"><i data-lucide="instagram"></i></a>
-      <a href="https://www.facebook.com/" target="_blank"><i data-lucide="facebook"></i></a>
+    <p>© 2025 Voldi Bill Paulo Lusikila. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://facebook.com" target="_blank"><i data-lucide="facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i data-lucide="instagram"></i></a>
     </div>
   </footer>
 
